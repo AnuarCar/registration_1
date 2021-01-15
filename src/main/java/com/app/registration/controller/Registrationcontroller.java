@@ -19,7 +19,7 @@ public class Registrationcontroller {
 	private RegistrationService service;
 	
 	@PostMapping("/registeruser")
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "https://practicalproject1angular.herokuapp.com")
 	public User registerUser(@RequestBody User user) throws Exception {
 		String tempEmailId = user.getEmailId();
 		if (tempEmailId != null && !"".equals(tempEmailId)) {
@@ -35,7 +35,8 @@ public class Registrationcontroller {
 	}
 	
 	@PostMapping("login")
-	@CrossOrigin(origins = "http://localhost:4200")
+	//@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "*")
 	public User loginUser(@RequestBody User user) throws Exception {
 		String tempEmailId = user.getEmailId(); 
 		String tempPass = user.getPassword();
